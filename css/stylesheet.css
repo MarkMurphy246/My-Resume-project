@@ -43,6 +43,9 @@ body{
     color:white;
     width:10%;
     height: 1103px;
+    animation: Borders;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
   }
 
   .nav{
@@ -61,6 +64,9 @@ body{
     color:rgb(34, 6, 109);
     width:99%;
     height:810px;
+    animation: Borders;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
   }
 
   .article{
@@ -75,6 +81,14 @@ body{
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 5px;
+  }
+
+  @keyframes Borders {
+    0% {border-color: #54829c;} 
+    25% {border-color: #0f130c;}
+    50% {border-color: #54829c;}
+    75% {border-color: #0f130c;}
+    100% {border-color: #54829c;}
   }
 
   img{
