@@ -1,31 +1,40 @@
 body{
     font-size:110%;
     background-color: #54829c;
+    background-image: url(../ProjectFolder/Images/BlueBackground.jpg);
+    background-size:cover
   }
-.header{
+.Jumbotron{
     text-align: center;
     color:rgb(34, 6, 109);
-    width: 99.5%;
-    height: 290px;
-    display: block;
-    background-color:#c9e6f7
+    background-color:#c9e6f7;
+    grid-area: nav;
+    background-image: url(../ProjectFolder/Images/FooterBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
-  .header{
+.Jumbotron{
     border-style: dotted;
     border-width: 5px;
     border-color: #54829c;
     border-radius: 20px 20px 20px 20px;
-    padding-top: 10px;
-    padding-bottom: 15px;
+    padding-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
   
 .footer{
     background-color: #c9e6f7;
+    background-image: url(../ProjectFolder/Images/FooterBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
     color:rgb(34, 6, 109);
     font-family: sans-serif;
     font-weight: bold;
+    grid-area: footer;
   }
 
   .footer{
@@ -33,83 +42,80 @@ body{
     border-width: 5px;
     border-color: #54829c;
     border-radius: 20px 20px 20px 20px;
-    margin-top: 5px;
-    padding-bottom: 10px;
-    padding-top: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 40%;
+    padding-right: 40%;
   }
 
-  .nav{
+  .header{
     background-color: #c9e6f7;
+    background-image: url(../ProjectFolder/Images/ArticleBackground.jpg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+    background-position-x: top;
     color:white;
-    width:10%;
-    height: 1103px;
-    animation: Borders;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
+    grid-area: header;
   }
 
-  .nav{
+  .header{
     border-style: dotted;
-    padding-bottom: 25px;
-    padding-left: 10px;
+    text-align:center;
+    padding-bottom: 390px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 20px;
     border-width: 5px;
     border-color: #54829c;
     border-radius: 20px 20px 20px 20px; 
-    margin-top: 10px;
-    margin-bottom: 5px;
   }
 
   .article{
     background-color: #c9e6f7;
+    background-image: url(../ProjectFolder/Images/ArticleBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: 136%;
+    background-position-x: right;
     color:rgb(34, 6, 109);
-    width:99%;
-    height:810px;
-    animation: Borders;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-  }
+    grid-area: article;
+   }
 
   .article{
     border-style: dotted;
-    padding-left: 10px;
-    padding-bottom: 318px;
-    border-width: 5px;
     border-left-width: 5px;
     border-right-width: 5px;
     border-color: #54829c;
     border-radius: 20px 20px 30px 30px; 
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 5px;
+    padding-left: 10px;
+    padding-top: 10px;
   }
 
-  @keyframes Borders {
-    0% {border-color: #54829c;} 
-    25% {border-color: #0f130c;}
-    50% {border-color: #54829c;}
-    75% {border-color: #0f130c;}
-    100% {border-color: #54829c;}
+  #ProfileImage{
+    height: 300px;
+    border-radius: 10px;
+    padding-bottom: 30px;
   }
-
-  img{
-    border: 5px dotted #54829c;
-  }
-
-  img{
-    border-radius: 50%;
-  }
-
-  h1,h2,h3{
+  
+   h1,h2,h3{
     text-decoration: underline;
+    padding-right: 9px;
   }
 
     #linkedinLogo{
-      border: none;
       border-radius: 0%;
     }
 
     .container{
-      display: flex;
+      display: grid;
+      height: 100vh;
+      grid-template-columns: 1fr 65% 1fr;
+      grid-template-rows:  fr1 1fr 1fr;
+      grid-template-areas: 
+      "header Jumbotron Jumbotron"
+      "header article article"
+      "header article article"
+      "footer footer footer"
     }
 
     p,h1,h2,h3,ul,li{
@@ -118,7 +124,7 @@ body{
     }
 
     #cellLogo{
-      border: none;
+      border: 2px;
       border-radius: 0%;
       font-weight: bold;
     }
@@ -128,3 +134,41 @@ body{
       border-radius: 0%;
     }
 
+    .Jumbotron li{
+      display: inline;
+      padding-right: 10px;
+    }
+
+    .Jumbotron ul{
+      padding-top:13px; 
+    }
+
+    @media all and (max-width: 600px) {
+     .container {
+       grid-template-columns: 1fr;
+       grid-template-rows: 1fr 1fr 1fr;
+       grid-template-areas: 
+       "Jumbotron"
+       "header"
+       "article"
+       "footer"
+     }
+     
+   }
+   
+   @media all and (max-width: 990px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: 
+      "Jumbotron"
+       "header"
+       "article"
+       "footer"
+    }
+    
+  }
+
+  .images :hover{
+    transform: scale(1.2)
+  }
