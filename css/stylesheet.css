@@ -4,17 +4,17 @@ body{
     background-image: url(../ProjectFolder/Images/BlueBackground.jpg);
     background-size:cover
   }
-.Jumbotron{
+.jumbotron{
     text-align: center;
     color:rgb(34, 6, 109);
     background-color:#c9e6f7;
-    grid-area: nav;
+    grid-area:auto;
     background-image: url(../ProjectFolder/Images/FooterBackground.jpg);
     background-repeat: no-repeat;
     background-size: cover;
   }
 
-.Jumbotron{
+.jumbotron{
     border-style: dotted;
     border-width: 5px;
     border-color: #54829c;
@@ -62,7 +62,7 @@ body{
   .header{
     border-style: dotted;
     text-align:center;
-    padding-bottom: 390px;
+    padding-bottom: 460px;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 20px;
@@ -134,12 +134,12 @@ body{
       border-radius: 0%;
     }
 
-    .Jumbotron li{
+    .jumbotron li{
       display: inline;
       padding-right: 10px;
     }
 
-    .Jumbotron ul{
+    .jumbotron ul{
       padding-top:13px; 
     }
 
