@@ -97,9 +97,9 @@ main{
     margin-bottom: 1rem;
 }
 
-#tasks .task {
-    display: flex 1 1 0%;
-    justify-content: space-between;
+#tasks {
+    display: flex;
+    justify-content:space-between;
     background-color: var(--darkest);
     padding: 1rem;
     border-radius: 1rem;
@@ -118,4 +118,9 @@ main{
 .delete{
     color: red;
     cursor: pointer;
+}
+
+.text{
+    color: var(--gray);
+    font-size: 1rem;
 }
