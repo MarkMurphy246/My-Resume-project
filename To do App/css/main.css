@@ -97,7 +97,7 @@ main{
     margin-bottom: 1rem;
 }
 
-#tasks {
+#tasks .task {
     display: flex;
     justify-content:space-between;
     background-color: var(--darkest);
@@ -107,6 +107,15 @@ main{
     color: var(--light);
     font-size: 1.25rem;
     margin-bottom: 1rem;
+}
+
+.text{
+    color:var(--light)
+}
+
+.content .text:not(:read-only){
+    color: var(--pink);
+    font-size: 1rem;
 }
 
 .edit{
@@ -123,11 +132,6 @@ main{
     text-transform: uppercase;
     font-size: 1rem;
     cursor: pointer;
-}
-
-.text{
-    color: var(--gray);
-    font-size: 1rem;
 }
 
 .actions button:hover{
