@@ -1,53 +1,41 @@
-window.addEventListener('load', () => {
-    const form = document.querySelector("#new-task-form");
-    const input = document.querySelector("#new-task-input");
-    const list_el = document.querySelector("#tasks");
+const form = document.querySelector('form')
+const ul = document.querySelector('ul')
+const button = document.querySelector('button')
+const input = document.getElementById('item')
+let itemsArray = localStorage.getItem('items')
+  ? JSON.parse(localStorage.getItem('items'))
+  : []
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+localStorage.setItem('items', JSON.stringify(itemsArray))
+const data = JSON.parse(localStorage.getItem('items'))
 
-        const task = input.value;
+const liMaker = (text) => {
+  const li = document.createElement('li')
+  li.textContent = text
+  ul.appendChild(li)
+}
 
-        if (!task) {
-            alert("Please fill out the task")
-            return;
-        }
+form.addEventListener('submit', function (e) {
+  e.preventDefault()
 
-        const task_el = document.createElement("div");
-        task_el.classList.add("task");
+  itemsArray.push(input.value)
+  localStorage.setItem('items', JSON.stringify(itemsArray))
+  liMaker(input.value)
+  input.value = ''
+})
 
-        const task_content_el = document.createElement("div");
-        task_content_el.classList.add("content");
+data.forEach((item) => {
+  liMaker(item)
+})
 
-        task_el.appendChild(task_content_el);
+const clear = document.querySelector('.clear');
+const edit = document.querySelector('.edit');
 
-        const task_input_el = document.createElement("input");
-        task_input_el.classList.add("text");
-        task_input_el.type = "text";
-        task_input_el.value = task;
-        task_input_el.setAttribute("readonly", "readonly");
+clear.addEventListener('click', () => {
+    ul.removeChild(ul.firstChild)
+})
 
-        task_content_el.appendChild(task_input_el);
-
-        const task_actions_el = document.createElement("div");
-        task_actions_el.classList.add("actions");
-
-        const task_edit_el = document.createElement("button");
-        task_edit_el.classList.add("edit");
-        task_edit_el.innerHTML ="Edit";
-
-        const task_delete_el = document.createElement("button");
-        task_delete_el.classList.add("delete");
-        task_delete_el.innerHTML ="Delete";
-
-        task_actions_el.appendChild(task_edit_el);
-        task_actions_el.appendChild(task_delete_el);
-
-        task_el.appendChild(task_actions_el);
-
-        list_el.appendChild(task_el);
-
-        input.value = "";
-    })
+edit.addEventListener('click',() => {
+    edit.innerHTML = "edit";    
 })
 
