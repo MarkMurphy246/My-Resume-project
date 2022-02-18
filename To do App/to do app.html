@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>To Do App</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>To Do App</h1>
+      <form id="new-task-form">
+        <input id="item" type="text" placeholder="Add New Task" required />
+        <button type="submit" id="submitbnt"></button>
+      </form>
+      
+      <h2>Task List</h2>
+      <ul id="list"contenteditable="true"></ul>
+            
+    </div>
+<div class="actions">
+    <button class="clear">Clear</button>
+    <button class="edit" onclick="editBtn(this);">Enable Edit</button>
+</div>
+    <script src="main.js"></script>
+  </body>
+</html>

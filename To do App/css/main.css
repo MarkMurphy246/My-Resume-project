@@ -1,0 +1,105 @@
+:root{
+    --dark: rgb(55, 65, 81);
+    --darker: rgb(31, 41, 55);
+    --darkest: rgb(17, 24, 39);
+    --gray: rgb(107, 114, 128);
+    --light: rgb(238, 238, 238);
+    --pink: rgb(236, 70, 153);
+    --purple: rgb(139, 92, 246);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--dark);
+    color: white;
+}
+
+header{
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--gray);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#new-task-form{
+    display: flex;
+}
+
+#item{
+    flex: 1 1 0%;
+    background-color: var(--darker);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    color: var(--light);
+    font-size: 1.25rem;
+    margin-left: 1rem;
+}
+
+h2{
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--gray);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+ul{
+    margin-bottom: 1rem;
+    list-style-type: circle;
+    text-align: left;
+    color: var(--light);
+}
+
+.edit{
+    color: red;
+    text-transform: uppercase;
+    font-size: 1rem;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    background-image: linear-gradient(to right, var(--pink), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+
+.clear{
+    color: red;
+    text-transform: uppercase;
+    font-size: 1rem;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    background-image: linear-gradient(to right, red, maroon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+
+.clear:hover{
+    opacity: 0.8;
+}
+
+.edit:hover{
+    opacity: 0.8;
+}
