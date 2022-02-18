@@ -3,8 +3,11 @@ const ul = document.querySelector('ul')
 const button = document.querySelector('button')
 const input = document.getElementById('item')
 let itemsArray = localStorage.getItem('items')
-  ? JSON.parse(localStorage.getItem('items'))
-  : []
+? JSON.parse(localStorage.getItem('items'))
+: []
+/*let clearArray = locatStorage.removeItem('items')
+? JSON.parse(localStorage.getItem('items'))
+: []*/
 
 localStorage.setItem('items', JSON.stringify(itemsArray))
 const data = JSON.parse(localStorage.getItem('items'))
@@ -29,13 +32,25 @@ data.forEach((item) => {
 })
 
 const clear = document.querySelector('.clear');
-const edit = document.querySelector('.edit');
 
 clear.addEventListener('click', () => {
     ul.removeChild(ul.firstChild)
 })
 
-edit.addEventListener('click',() => {
-    edit.innerHTML = "edit";    
-})
+function editBtn(button){
+  const liEdit = document.getElementById("list");
+  if (liEdit.contentEditable == "true"){
+    liEdit.contentEditable = "false";
+    button.innerHTML = " Enable Edit";
+  } else {
+    liEdit.contentEditable = "true";
+    button.innerHTML = "Disable EDit"
+  }
+}
 
+button.addEventListener('click', function(){
+  localStorage.clear()
+  while(ul.firstChild){
+    ul.removeChild(ul.firstChild)
+  }
+})

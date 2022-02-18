@@ -13,15 +13,16 @@
       <h1>To Do App</h1>
       <form id="new-task-form">
         <input id="item" type="text" placeholder="Add New Task" required />
+        <button type="submit" id="submitbnt"></button>
       </form>
       
       <h2>Task List</h2>
-      <ul></ul>
+      <ul id="list"contenteditable="true"></ul>
             
     </div>
 <div class="actions">
     <button class="clear">Clear</button>
-    <button class="edit">Edit</button>
+    <button class="edit" onclick="editBtn(this);">Enable Edit</button>
 </div>
     <script src="main.js"></script>
   </body>
