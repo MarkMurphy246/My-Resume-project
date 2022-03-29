@@ -62,6 +62,7 @@ h2{
 }
 
 ul{
+    margin-right: 50px;
     margin-bottom: 1rem;
     list-style-type: circle;
     text-align: left;
@@ -117,7 +118,7 @@ ul{
     border: none;
     outline: none;
     background: none;
-    background-image: linear-gradient(to right, var(--pink), var(--purple));
+    background-image: linear-gradient(to right, rgb(0, 255, 13), rgb(16, 172, 16));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     cursor: pointer;
