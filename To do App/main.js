@@ -5,9 +5,6 @@ const input = document.getElementById('item')
 let itemsArray = localStorage.getItem('items')
 ? JSON.parse(localStorage.getItem('items'))
 : []
-/*let clearArray = locatStorage.removeItem('items')
-? JSON.parse(localStorage.getItem('items'))
-: []*/
 
 localStorage.setItem('items', JSON.stringify(itemsArray))
 const data = JSON.parse(localStorage.getItem('items'))
@@ -35,6 +32,7 @@ const clear = document.querySelector('.clear');
 
 clear.addEventListener('click', () => {
     ul.removeChild(ul.firstChild)
+    localStorage.removeItem('items', JSON.stringify(itemsArray));
 })
 
 function editBtn(button){
